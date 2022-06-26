@@ -1,8 +1,17 @@
-output "hello" {
-  #terraform plan --var "age=20.6"
-  value = "Hello World ${upper(var.name)} | age ${ceil(var.age)}"
+provider "github" {
+  token = "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"
 }
 
-output "display-users" {
-  value = "Users : ${join(", ", var.users)}"
+resource "github_repository" "first-repo-terraform" {
+  name        = "first-repo-terraform"
+  description = "Repo created by terraform"
+  visibility  = "public"
+  auto_init   = true
+}
+
+resource "github_repository" "second-repo-terraform" {
+  name        = "second-repo-terraform"
+  description = "Repo created by terraform"
+  visibility  = "public"
+  auto_init   = true
 }

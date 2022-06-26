@@ -1,3 +1,4 @@
 output "hello" {
-  value = "Hello World ${var.name} | age ${var.age}"
+  #terraform plan --var "age=20.6"
+  value = "Hello World ${upper(var.name)} | age ${ceil(var.age)}"
 }

@@ -1,6 +1,3 @@
-output "hello" {
-  value = "Hello World ${var.name} | age ${var.age}"
-}
 
 variable "name" {
   type    = string
